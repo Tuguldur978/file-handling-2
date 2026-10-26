@@ -1,6 +1,5 @@
 # You can remove 'pass' if you written code in the function
 # Exercise 1
-
 def save_scores(names, scores, filename):
     file = open(filename,"w")
     for i in range(len(names)):
