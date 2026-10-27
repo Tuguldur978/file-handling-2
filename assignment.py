@@ -45,8 +45,15 @@ def filter_passed(source, destination, pass_mark):
 
 # Exercise 4
 def replace_word(filename, old_word, new_word):
-    # Write your code here
-    pass
+    file = open(filename, "r")
+    content = file.read()
+    file.close()
+    count = content.count(old_word)
+    new_content = content.replace(old_word, new_word)
+    file = open(filename, "w")
+    file.write(new_content)
+    file.close()
+    return count
 
 # Exercise 5
 def remove_line(filename, line_number):
