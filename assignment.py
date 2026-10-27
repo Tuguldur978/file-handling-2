@@ -57,5 +57,13 @@ def replace_word(filename, old_word, new_word):
 
 # Exercise 5
 def remove_line(filename, line_number):
-    # Write your code here
-    pass
+        file = open(filename, "r")
+        lines = file.readlines()
+        file.close()
+        if line_number < 1 or line_number > len(lines):
+            return False
+        lines.pop(line_number - 1)
+        file = open(filename, "w")
+        file.writelines(lines)
+        file.close()
+        return True
